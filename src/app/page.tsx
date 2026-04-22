@@ -375,7 +375,7 @@ export default function Home() {
             className="h-[1px] bg-rule w-full mt-8 origin-left"
           ></motion.div>
           <p className="mono mt-4 text-mid text-[11px]">
-            Source: Northbound internal engagement data, Q1–Q3 2025. Methodology available on request.
+            Source: Dawnfield internal engagement data, Q1–Q3 2025. Methodology available on request.
           </p>
         </Shell>
       </Section>

@@ -151,7 +151,7 @@ export default function MethodPage() {
                 </svg>
              </div>
           </motion.div>
-          <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ delay: 0.4 }} className="mono small mt-4 text-mid">Fig. 01 — Northbound operating system. Every retainer runs this diagram, every week.</motion.div>
+          <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ delay: 0.4 }} className="mono small mt-4 text-mid">Fig. 01 — Dawnfield operating system. Every retainer runs this diagram, every week.</motion.div>
         </Shell>
       </Section>
 

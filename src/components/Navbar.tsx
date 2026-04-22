@@ -6,7 +6,7 @@ export default function Navbar() {
       <div className="nav-inner flex items-center justify-between h-[68px] max-w-[1400px] mx-auto px-10">
         <Link className="brand flex items-center gap-[10px] font-serif text-[22px] tracking-[-0.01em]" href="/">
           <span className="brand-mark w-[22px] h-[22px] rounded-full bg-ink relative after:content-[''] after:absolute after:inset-[4px] after:rounded-full after:bg-bg before:content-[''] before:absolute before:left-1/2 before:top-[2px] before:bottom-[2px] before:w-[1px] before:bg-ink before:translate-x-[-0.5px]" aria-hidden="true"></span>
-          <span>Northbound</span>
+          <span>Dawnfield</span>
         </Link>
         <div className="nav-links flex gap-8 items-center max-md:hidden">
           <Link href="/method" className="text-[14px] text-ink-2 py-[6px] relative hover:text-ink">Method</Link>

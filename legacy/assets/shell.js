@@ -7,7 +7,7 @@
       <div class="nav-inner">
         <a class="brand" href="index.html">
           <span class="brand-mark" aria-hidden="true"></span>
-          <span>Northbound</span>
+          <span>Dawnfield</span>
         </a>
         <div class="nav-links">
           <a href="method.html" data-page="method.html">Method</a>
@@ -31,7 +31,7 @@
           <div class="footer-col">
             <div class="brand" style="margin-bottom:16px">
               <span class="brand-mark" aria-hidden="true"></span>
-              <span>Northbound</span>
+              <span>Dawnfield</span>
             </div>
             <p class="body" style="max-width:36ch; color:var(--mid); font-size:14px">
               A vertical paid-media partner for high-growth DTC and B2B teams. We sell outcomes, not hours.
@@ -64,15 +64,15 @@
           <div class="footer-col">
             <h4>Contact</h4>
             <ul>
-              <li><a href="mailto:hello@northbound.co">hello@northbound.co</a></li>
+              <li><a href="mailto:hello@dawnfield.co">hello@dawnfield.co</a></li>
               <li><a href="contact.html">Book a call</a></li>
               <li><a href="#">Press</a></li>
             </ul>
           </div>
         </div>
         <div class="footer-base">
-          <span>© 2026 Northbound Growth, Inc. All rights reserved.</span>
-          <span class="mono">NB · 0426 · v4.2</span>
+          <span>© 2026 Dawnfield Growth, Inc. All rights reserved.</span>
+          <span class="mono">DF · 0426 · v4.2</span>
         </div>
       </div>
     </footer>

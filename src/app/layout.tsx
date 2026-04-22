@@ -21,7 +21,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Northbound — Vertical paid-media, outcome-priced.",
+  title: "Dawnfield — Vertical paid-media, outcome-priced.",
   description: "A vertical paid-media partner for high-growth DTC teams.",
 };
 

@@ -51,7 +51,7 @@ export default function AboutPage() {
             transition={{ ...transition, delay: 0.5 }}
             className="lede max-w-[54ch] mt-8"
           >
-            Northbound is 14 people in Brooklyn and Lisbon. We run paid media for one
+            Dawnfield is 14 people in Brooklyn and Lisbon. We run paid media for one
             vertical — founder-led DTC brands — and we&apos;ve been doing it long enough
             to know when an idea is clever and when it&apos;s just new.
           </motion.p>

@@ -70,8 +70,8 @@ export default function ContactPage() {
 
               <div className="grid grid-cols-2 gap-8 max-sm:grid-cols-1">
                 {[
-                  { k: 'Direct', v: 'hello@northbound.co', s: 'Reply within 1 business day' },
-                  { k: 'Press / partnerships', v: 'press@northbound.co', s: 'Media list on request' },
+                  { k: 'Direct', v: 'hello@dawnfield.co', s: 'Reply within 1 business day' },
+                  { k: 'Press / partnerships', v: 'press@dawnfield.co', s: 'Media list on request' },
                   { k: 'Brooklyn', v: <>68 Jay Street, Suite 410<br />Brooklyn, NY 11201</> },
                   { k: 'Lisboa', v: <>R. dos Remolares 14<br />1200-370 Lisboa, PT</> }
                 ].map((item, i) => (

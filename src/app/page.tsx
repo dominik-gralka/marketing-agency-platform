@@ -17,10 +17,9 @@ export default function Home() {
               </div>
 
               <h1 className="display">
-                We run paid ads<br />
-                for one kind<br />
-                of business.<br />
-                <em>Yours, if we take it.</em>
+                Your CAC is<br />
+                not a mystery.<br />
+                <em>Its a math problem.</em>
               </h1>
 
               <p className="lede max-w-[52ch] mt-9">

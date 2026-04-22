@@ -24,7 +24,7 @@ body {
 
 @layer components {
   .display {
-    @apply font-serif text-[clamp(48px,7.4vw,112px)] leading-[0.98] tracking-[-0.02em];
+    @apply font-serif text-[clamp(48px,5.4vw,112px)] leading-[0.98] tracking-[-0.02em];
   }
   .h1 {
     @apply font-serif text-[clamp(40px,5.4vw,80px)] leading-[1.0] tracking-[-0.02em];

@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Method — Northbound</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+<div id="nav"></div>
+
+<!-- Hero -->
+<section class="section flush-top" style="padding-top: 80px; padding-bottom: 40px; border-top:none">
+  <div class="shell">
+    <span class="mono" style="color:var(--mid)">§ Method · the operating system</span>
+    <h1 class="display" style="margin-top: 24px; max-width: 18ch">Four loops.<br>Running<br>at once.</h1>
+    <p class="lede" style="max-width: 52ch; margin-top: 32px">
+      We don't run "campaigns." We run a closed-loop system that moves through four stages every week.
+      Below is what each loop actually does, who owns it, and the artifacts it produces.
+    </p>
+  </div>
+</section>
+
+<!-- Diagram -->
+<section class="section">
+  <div class="shell">
+    <div class="section-head">
+      <div class="left">
+        <span class="num">§ 01 — System map</span>
+        <h2 class="h1" style="max-width: 18ch">From signal to scale, in one diagram.</h2>
+      </div>
+      <div style="max-width: 40ch"><p class="body-lg">Each loop feeds the next. Break any one of them and the rest quietly stop working — which is where most agencies drift.</p></div>
+    </div>
+
+    <!-- Custom methodology diagram -->
+    <div style="background: var(--paper); border: 1px solid var(--rule); padding: 56px 40px; position: relative">
+      <svg viewBox="0 0 1200 480" style="width: 100%; height: auto; display: block" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+            <path d="M0,0 L10,5 L0,10 z" fill="#171412"/>
+          </marker>
+        </defs>
+
+        <!-- Vertical dividers -->
+        <line x1="300" y1="40" x2="300" y2="440" stroke="#e4ddd0" stroke-width="1"/>
+        <line x1="600" y1="40" x2="600" y2="440" stroke="#e4ddd0" stroke-width="1"/>
+        <line x1="900" y1="40" x2="900" y2="440" stroke="#e4ddd0" stroke-width="1"/>
+
+        <!-- Stage labels -->
+        <text x="20" y="40" font-family="JetBrains Mono" font-size="11" fill="#8a8175" letter-spacing="1.4">LOOP 01</text>
+        <text x="320" y="40" font-family="JetBrains Mono" font-size="11" fill="#8a8175" letter-spacing="1.4">LOOP 02</text>
+        <text x="620" y="40" font-family="JetBrains Mono" font-size="11" fill="#8a8175" letter-spacing="1.4">LOOP 03</text>
+        <text x="920" y="40" font-family="JetBrains Mono" font-size="11" fill="#8a8175" letter-spacing="1.4">LOOP 04</text>
+
+        <!-- Titles -->
+        <text x="20" y="72" font-family="Instrument Serif" font-size="28" fill="#171412">Signal</text>
+        <text x="20" y="100" font-family="Instrument Serif" font-size="28" fill="#171412">architecture</text>
+        <text x="320" y="72" font-family="Instrument Serif" font-size="28" fill="#171412">Creative</text>
+        <text x="320" y="100" font-family="Instrument Serif" font-size="28" fill="#171412">engine</text>
+        <text x="620" y="72" font-family="Instrument Serif" font-size="28" fill="#171412">Optimization</text>
+        <text x="620" y="100" font-family="Instrument Serif" font-size="28" fill="#171412">loop</text>
+        <text x="920" y="72" font-family="Instrument Serif" font-size="28" fill="#171412">Reporting</text>
+        <text x="920" y="100" font-family="Instrument Serif" font-size="28" fill="#171412">&amp; comms</text>
+
+        <!-- Cadences -->
+        <text x="20" y="420" font-family="JetBrains Mono" font-size="10" fill="#8a8175" letter-spacing="1.4">ONCE · WEEK 1</text>
+        <text x="320" y="420" font-family="JetBrains Mono" font-size="10" fill="#8a8175" letter-spacing="1.4">WEEKLY</text>
+        <text x="620" y="420" font-family="JetBrains Mono" font-size="10" fill="#8a8175" letter-spacing="1.4">DAILY</text>
+        <text x="920" y="420" font-family="JetBrains Mono" font-size="10" fill="#8a8175" letter-spacing="1.4">CONTINUOUS</text>
+
+        <!-- Artifacts (nodes) -->
+        <g transform="translate(20, 150)">
+          <rect width="260" height="32" fill="none" stroke="#171412" stroke-width="1"/>
+          <text x="16" y="21" font-family="JetBrains Mono" font-size="11" fill="#171412">CAPI · server-side</text>
+          <rect y="48" width="260" height="32" fill="none" stroke="#171412" stroke-width="1"/>
+          <text x="16" y="69" font-family="JetBrains Mono" font-size="11" fill="#171412">Modeled conversions</text>
+          <rect y="96" width="260" height="32" fill="none" stroke="#171412" stroke-width="1"/>
+          <text x="16" y="117" font-family="JetBrains Mono" font-size="11" fill="#171412">Single CAC source-of-truth</text>
+          <rect y="144" width="260" height="32" fill="none" stroke="#171412" stroke-width="1"/>
+          <text x="16" y="165" font-family="JetBrains Mono" font-size="11" fill="#171412">Platform · GA4 · CRM reconciled</text>
+        </g>
+
+        <g transform="translate(320, 150)">
+          <rect width="260" height="32" fill="none" stroke="#171412" stroke-width="1"/>
+          <text x="16" y="21" font-family="JetBrains Mono" font-size="11" fill="#171412">Angle matrix (12 axes)</text>
+          <rect y="48" width="260" height="32" fill="none" stroke="#171412" stroke-width="1"/>
+          <text x="16" y="69" font-family="JetBrains Mono" font-size="11" fill="#171412">8–12 net-new concepts / mo</text>
+          <rect y="96" width="260" height="32" fill="#171412"/>
+          <text x="16" y="117" font-family="JetBrains Mono" font-size="11" fill="#f5f2ec">Creative approval · portal</text>
+          <rect y="144" width="260" height="32" fill="none" stroke="#171412" stroke-width="1"/>
+          <text x="16" y="165" font-family="JetBrains Mono" font-size="11" fill="#171412">Ship Tues · review Fri</text>
+        </g>
+
+        <g transform="translate(620, 150)">
+          <rect width="260" height="32" fill="none" stroke="#171412" stroke-width="1"/>
+          <text x="16" y="21" font-family="JetBrains Mono" font-size="11" fill="#171412">Daily bid/budget review</text>
+          <rect y="48" width="260" height="32" fill="none" stroke="#171412" stroke-width="1"/>
+          <text x="16" y="69" font-family="JetBrains Mono" font-size="11" fill="#171412">Weekly structural changes</text>
+          <rect y="96" width="260" height="32" fill="none" stroke="#171412" stroke-width="1"/>
+          <text x="16" y="117" font-family="JetBrains Mono" font-size="11" fill="#171412">Monthly full account audit</text>
+          <rect y="144" width="260" height="32" fill="none" stroke="#171412" stroke-width="1"/>
+          <text x="16" y="165" font-family="JetBrains Mono" font-size="11" fill="#171412">Quarterly budget re-plan</text>
+        </g>
+
+        <g transform="translate(920, 150)">
+          <rect width="260" height="32" fill="none" stroke="#171412" stroke-width="1"/>
+          <text x="16" y="21" font-family="JetBrains Mono" font-size="11" fill="#171412">Live portal · 24/7</text>
+          <rect y="48" width="260" height="32" fill="#171412"/>
+          <text x="16" y="69" font-family="JetBrains Mono" font-size="11" fill="#f5f2ec">Mon 08:00 AI narrative</text>
+          <rect y="96" width="260" height="32" fill="none" stroke="#171412" stroke-width="1"/>
+          <text x="16" y="117" font-family="JetBrains Mono" font-size="11" fill="#171412">Biweekly exec review</text>
+          <rect y="144" width="260" height="32" fill="none" stroke="#171412" stroke-width="1"/>
+          <text x="16" y="165" font-family="JetBrains Mono" font-size="11" fill="#171412">Monthly finance pack</text>
+        </g>
+
+        <!-- Horizontal flow arrows -->
+        <line x1="280" y1="360" x2="316" y2="360" stroke="#171412" stroke-width="1" marker-end="url(#arr)"/>
+        <line x1="580" y1="360" x2="616" y2="360" stroke="#171412" stroke-width="1" marker-end="url(#arr)"/>
+        <line x1="880" y1="360" x2="916" y2="360" stroke="#171412" stroke-width="1" marker-end="url(#arr)"/>
+
+        <!-- Feedback arc -->
+        <path d="M 1100 380 Q 1180 440 1100 450 Q 600 470 100 450 Q 20 440 100 380" fill="none" stroke="#171412" stroke-width="1" stroke-dasharray="3 3" marker-end="url(#arr)"/>
+        <text x="540" y="468" font-family="JetBrains Mono" font-size="10" fill="#8a8175" letter-spacing="1.2">FEEDBACK · RESULTS INFORM NEXT CYCLE</text>
+      </svg>
+    </div>
+    <div class="mono small" style="margin-top: 16px; color:var(--mid)">Fig. 01 — Northbound operating system. Every retainer runs this diagram, every week.</div>
+  </div>
+</section>
+
+<!-- Loops detail -->
+<section class="section">
+  <div class="shell">
+    <div class="section-head">
+      <div class="left">
+        <span class="num">§ 02 — Loops in detail</span>
+        <h2 class="h1" style="max-width: 18ch">Who owns what,<br>and when.</h2>
+      </div>
+    </div>
+
+    <div style="display:flex; flex-direction:column; border-top: 1px solid var(--rule)">
+      <!-- Loop 01 -->
+      <div style="display:grid; grid-template-columns: 1fr 2fr 1fr; gap: 40px; padding: 40px 0; border-bottom: 1px solid var(--rule); align-items: start">
+        <div>
+          <div class="mono" style="color:var(--mid); font-size:11px; letter-spacing:0.12em; text-transform:uppercase">Loop 01 · Week 1</div>
+          <h3 class="h2" style="margin-top: 14px">Signal<br>architecture</h3>
+        </div>
+        <div>
+          <p class="body-lg" style="margin: 0 0 20px">You cannot optimize what you cannot measure. The first two weeks of every engagement are spent wiring up a measurement stack that reports one CAC, one MER, one contribution-margin number — regardless of which dashboard you're looking at.</p>
+          <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap: 10px; font-size: 14px">
+            <li style="display:flex; gap:12px"><span class="mono" style="color:var(--mid)">→</span>Server-side conversion API (Meta / Google / TikTok)</li>
+            <li style="display:flex; gap:12px"><span class="mono" style="color:var(--mid)">→</span>First-party customer-lookup layer, deduped against the CRM</li>
+            <li style="display:flex; gap:12px"><span class="mono" style="color:var(--mid)">→</span>Modeled conversions for iOS / opt-out traffic</li>
+            <li style="display:flex; gap:12px"><span class="mono" style="color:var(--mid)">→</span>Reconciliation with Shopify / NetSuite / your ledger of record</li>
+          </ul>
+        </div>
+        <div style="padding-left: 20px; border-left: 1px solid var(--rule)">
+          <div class="kicker" style="margin-bottom: 8px">Owner</div>
+          <div style="font-size:14px">Signal engineer</div>
+          <div class="kicker" style="margin: 20px 0 8px">Cadence</div>
+          <div style="font-size:14px">Once, then quarterly audit</div>
+          <div class="kicker" style="margin: 20px 0 8px">Artifact</div>
+          <div style="font-size:14px">Measurement spec doc</div>
+        </div>
+      </div>
+
+      <!-- Loop 02 -->
+      <div style="display:grid; grid-template-columns: 1fr 2fr 1fr; gap: 40px; padding: 40px 0; border-bottom: 1px solid var(--rule); align-items: start">
+        <div>
+          <div class="mono" style="color:var(--mid); font-size:11px; letter-spacing:0.12em; text-transform:uppercase">Loop 02 · Weekly</div>
+          <h3 class="h2" style="margin-top: 14px">Creative<br>engine</h3>
+        </div>
+        <div>
+          <p class="body-lg" style="margin: 0 0 20px">Creative is 80% of performance. We ship 8–12 net-new concepts a month against a 12-axis angle matrix, then kill losers in week two. No months-long "hero campaigns."</p>
+          <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap: 10px; font-size: 14px">
+            <li style="display:flex; gap:12px"><span class="mono" style="color:var(--mid)">→</span>Angle matrix: pain · proof · story · demo · social · founder · comparison · etc.</li>
+            <li style="display:flex; gap:12px"><span class="mono" style="color:var(--mid)">→</span>In-house studio: UGC brief library, edit templates, motion system</li>
+            <li style="display:flex; gap:12px"><span class="mono" style="color:var(--mid)">→</span>Approval workspace inside the portal — no Dropbox links</li>
+            <li style="display:flex; gap:12px"><span class="mono" style="color:var(--mid)">→</span>Test framework: stat-sig thresholds, not vibes</li>
+          </ul>
+        </div>
+        <div style="padding-left: 20px; border-left: 1px solid var(--rule)">
+          <div class="kicker" style="margin-bottom: 8px">Owner</div>
+          <div style="font-size:14px">Creative strategist + studio</div>
+          <div class="kicker" style="margin: 20px 0 8px">Cadence</div>
+          <div style="font-size:14px">Ship Tues · review Fri</div>
+          <div class="kicker" style="margin: 20px 0 8px">Artifact</div>
+          <div style="font-size:14px">Monthly concept roadmap</div>
+        </div>
+      </div>
+
+      <!-- Loop 03 -->
+      <div style="display:grid; grid-template-columns: 1fr 2fr 1fr; gap: 40px; padding: 40px 0; border-bottom: 1px solid var(--rule); align-items: start">
+        <div>
+          <div class="mono" style="color:var(--mid); font-size:11px; letter-spacing:0.12em; text-transform:uppercase">Loop 03 · Daily</div>
+          <h3 class="h2" style="margin-top: 14px">Optimization<br>loop</h3>
+        </div>
+        <div>
+          <p class="body-lg" style="margin: 0 0 20px">The boring part. A senior buyer on your account every trading day, with a documented checklist — not "vibes and intuition."</p>
+          <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap: 10px; font-size: 14px">
+            <li style="display:flex; gap:12px"><span class="mono" style="color:var(--mid)">→</span>Daily: bids, budgets, pacing, anomaly flags</li>
+            <li style="display:flex; gap:12px"><span class="mono" style="color:var(--mid)">→</span>Weekly: structural changes, new ad sets, winner consolidation</li>
+            <li style="display:flex; gap:12px"><span class="mono" style="color:var(--mid)">→</span>Monthly: full account audit against a 43-point rubric</li>
+            <li style="display:flex; gap:12px"><span class="mono" style="color:var(--mid)">→</span>Quarterly: budget reallocation across platforms</li>
+          </ul>
+        </div>
+        <div style="padding-left: 20px; border-left: 1px solid var(--rule)">
+          <div class="kicker" style="margin-bottom: 8px">Owner</div>
+          <div style="font-size:14px">Senior media buyer</div>
+          <div class="kicker" style="margin: 20px 0 8px">Cadence</div>
+          <div style="font-size:14px">Daily</div>
+          <div class="kicker" style="margin: 20px 0 8px">Artifact</div>
+          <div style="font-size:14px">Optimization changelog</div>
+        </div>
+      </div>
+
+      <!-- Loop 04 -->
+      <div style="display:grid; grid-template-columns: 1fr 2fr 1fr; gap: 40px; padding: 40px 0; border-bottom: 1px solid var(--rule); align-items: start">
+        <div>
+          <div class="mono" style="color:var(--mid); font-size:11px; letter-spacing:0.12em; text-transform:uppercase">Loop 04 · Continuous</div>
+          <h3 class="h2" style="margin-top: 14px">Reporting<br>&amp; comms</h3>
+        </div>
+        <div>
+          <p class="body-lg" style="margin: 0 0 20px">The client portal is always on. No status calls required to know what's happening. We over-communicate so you don't have to chase.</p>
+          <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap: 10px; font-size: 14px">
+            <li style="display:flex; gap:12px"><span class="mono" style="color:var(--mid)">→</span>Live portal with MER, CAC, contribution margin, pacing</li>
+            <li style="display:flex; gap:12px"><span class="mono" style="color:var(--mid)">→</span>Monday 08:00 AI-drafted narrative, reviewed by your strategist</li>
+            <li style="display:flex; gap:12px"><span class="mono" style="color:var(--mid)">→</span>Biweekly 30-minute exec review (video, never a meeting)</li>
+            <li style="display:flex; gap:12px"><span class="mono" style="color:var(--mid)">→</span>Monthly finance pack for your CFO</li>
+          </ul>
+        </div>
+        <div style="padding-left: 20px; border-left: 1px solid var(--rule)">
+          <div class="kicker" style="margin-bottom: 8px">Owner</div>
+          <div style="font-size:14px">Account strategist</div>
+          <div class="kicker" style="margin: 20px 0 8px">Cadence</div>
+          <div style="font-size:14px">24/7 portal · weekly narrative</div>
+          <div class="kicker" style="margin: 20px 0 8px">Artifact</div>
+          <div style="font-size:14px">Every dashboard you need</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Closing CTA -->
+<section class="section">
+  <div class="shell-narrow">
+    <h2 class="display" style="font-size: clamp(40px, 5.4vw, 80px); max-width: 18ch">Seen enough? The audit shows how we'd run this for you.</h2>
+    <div style="display:flex; gap:14px; margin-top: 40px; flex-wrap:wrap">
+      <a class="btn btn-primary" href="audit.html">See the paid audit</a>
+      <a class="btn btn-ghost" href="pricing.html">See pricing</a>
+    </div>
+  </div>
+</section>
+
+<div id="footer"></div>
+<script src="assets/shell.js"></script>
+</body>
+</html>

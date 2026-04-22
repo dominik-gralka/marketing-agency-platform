@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact — Northbound</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+<div id="nav"></div>
+
+<section class="section flush-top" style="padding-top: 80px; padding-bottom: 60px; border-top:none">
+  <div class="shell">
+    <div style="display:grid; grid-template-columns: 1.1fr 1fr; gap: 80px">
+      <div>
+        <span class="mono" style="color:var(--mid)">§ Contact · the short form</span>
+        <h1 class="display" style="margin-top: 24px; max-width: 14ch">A 20-minute scoping call.</h1>
+        <p class="lede" style="max-width: 52ch; margin-top: 32px">
+          No deck, no sales theater. You tell us your spend, your vertical, and what's broken.
+          We tell you which tier fits, a ballpark retainer, and whether the audit is the right next step.
+        </p>
+        <div class="rule" style="margin: 40px 0"></div>
+        <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 32px">
+          <div>
+            <div class="kicker" style="margin-bottom: 10px">Direct</div>
+            <div style="font-family: var(--serif); font-size: 22px">hello@northbound.co</div>
+            <div class="mono small" style="margin-top: 6px">Reply within 1 business day</div>
+          </div>
+          <div>
+            <div class="kicker" style="margin-bottom: 10px">Press / partnerships</div>
+            <div style="font-family: var(--serif); font-size: 22px">press@northbound.co</div>
+            <div class="mono small" style="margin-top: 6px">Media list on request</div>
+          </div>
+          <div>
+            <div class="kicker" style="margin-bottom: 10px">Brooklyn</div>
+            <div class="body" style="font-size:15px">68 Jay Street, Suite 410<br>Brooklyn, NY 11201</div>
+          </div>
+          <div>
+            <div class="kicker" style="margin-bottom: 10px">Lisboa</div>
+            <div class="body" style="font-size:15px">R. dos Remolares 14<br>1200-370 Lisboa, PT</div>
+          </div>
+        </div>
+      </div>
+
+      <aside class="card" style="padding: 40px">
+        <form id="cform" style="display:flex; flex-direction:column; gap: 28px">
+          <div class="field">
+            <label>Your name</label>
+            <input class="input" required placeholder="Full name">
+          </div>
+          <div class="field">
+            <label>Work email</label>
+            <input class="input" required type="email" placeholder="you@brand.com">
+          </div>
+          <div class="field">
+            <label>Brand / domain</label>
+            <input class="input" placeholder="brandname.com">
+          </div>
+          <div class="field">
+            <label>Monthly paid spend</label>
+            <div style="display:flex; gap:8px; flex-wrap:wrap; margin-top:4px" id="spend-chips">
+              <button type="button" class="chip-choice" data-v="0-40">&lt;$40K</button>
+              <button type="button" class="chip-choice on" data-v="40-100">$40–100K</button>
+              <button type="button" class="chip-choice" data-v="100-350">$100–350K</button>
+              <button type="button" class="chip-choice" data-v="350+">$350K+</button>
+            </div>
+          </div>
+          <div class="field">
+            <label>What's your biggest paid-media problem right now?</label>
+            <textarea class="textarea" rows="4" placeholder="One paragraph is plenty."></textarea>
+          </div>
+          <div style="display:flex; justify-content:space-between; align-items:center; padding-top: 20px; border-top: 1px solid var(--rule)">
+            <span class="mono small" style="color:var(--mid)">20-min call · no deck</span>
+            <button class="btn btn-primary" type="submit">
+              Request a slot
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M7 3l3 3-3 3" stroke="currentColor" stroke-width="1.2" stroke-linecap="square"/></svg>
+            </button>
+          </div>
+        </form>
+        <div id="sent" style="display:none; padding: 40px 0; text-align:center">
+          <div class="kicker" style="color: oklch(0.55 0.14 145)">✓ Received</div>
+          <div style="font-family: var(--serif); font-size: 28px; margin-top: 12px; line-height:1.2">We'll reply within one business day.</div>
+          <p class="body small" style="margin-top: 12px">In the meantime — the <a href="audit.html" style="border-bottom:1px solid var(--ink); color: var(--ink)">paid audit</a> answers most of what we'd cover on the call.</p>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="shell">
+    <div class="section-head">
+      <div class="left">
+        <span class="num">§ 02 — What to expect</span>
+        <h2 class="h1" style="max-width: 16ch">From inquiry to kickoff, in 10 days.</h2>
+      </div>
+    </div>
+
+    <div style="border-top: 1px solid var(--rule)" id="timeline"></div>
+    <script>
+      const timeline = [
+        ['Day 0','You submit the form. We reply within a business day with two scoping-call times.'],
+        ['Day 2','20-minute scoping call. We ask about spend, targets, team, and timeline. No deck.'],
+        ['Day 3','You receive a one-page scope memo — tier recommendation, retainer range, target CAC.'],
+        ['Day 5','Either: (a) commission the paid audit, or (b) we send a tier-specific MSA for signature.'],
+        ['Day 10','Kickoff. Signal architecture starts.'],
+      ];
+      document.getElementById('timeline').innerHTML = timeline.map(r => `
+        <div style="display:grid; grid-template-columns: 140px 1fr; gap: 32px; padding: 24px 0; border-bottom: 1px solid var(--rule)">
+          <div class="mono" style="color:var(--mid); font-size:12px; letter-spacing:0.08em; text-transform:uppercase">${r[0]}</div>
+          <div class="body-lg">${r[1]}</div>
+        </div>
+      `).join('');
+    </script>
+  </div>
+</section>
+
+<div id="footer"></div>
+<script>
+  document.querySelectorAll('#spend-chips .chip-choice').forEach(b => b.addEventListener('click', () => {
+    document.querySelectorAll('#spend-chips .chip-choice').forEach(x => x.classList.remove('on'));
+    b.classList.add('on');
+  }));
+  document.getElementById('cform').addEventListener('submit', e => {
+    e.preventDefault();
+    document.getElementById('cform').style.display = 'none';
+    document.getElementById('sent').style.display = 'block';
+  });
+</script>
+<script src="assets/shell.js"></script>
+</body>
+</html>

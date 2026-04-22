@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>About — Northbound</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+<div id="nav"></div>
+
+<section class="section flush-top" style="padding-top: 80px; padding-bottom: 40px; border-top:none">
+  <div class="shell">
+    <span class="mono" style="color:var(--mid)">§ About · the house</span>
+    <h1 class="display" style="margin-top: 24px; max-width: 18ch">A small shop,<br>built to outlast<br>the client.</h1>
+    <p class="lede" style="max-width: 54ch; margin-top: 32px">
+      Northbound is 14 people in Brooklyn and Lisbon. We run paid media for one
+      vertical — founder-led DTC brands — and we've been doing it long enough
+      to know when an idea is clever and when it's just new.
+    </p>
+  </div>
+</section>
+
+<!-- Principles -->
+<section class="section">
+  <div class="shell">
+    <div class="section-head">
+      <div class="left">
+        <span class="num">§ 01 — How we work</span>
+        <h2 class="h1" style="max-width: 18ch">Four principles, written down.</h2>
+      </div>
+    </div>
+
+    <div style="display:flex; flex-direction:column; border-top: 1px solid var(--rule)">
+      <div style="display:grid; grid-template-columns: 1fr 3fr; gap: 40px; padding: 36px 0; border-bottom: 1px solid var(--rule)">
+        <div class="mono" style="color:var(--mid); font-size:12px; letter-spacing:0.12em; text-transform:uppercase">Principle 01</div>
+        <div>
+          <h3 class="h2" style="margin-bottom: 14px; font-size: 36px">Narrow is a superpower.</h3>
+          <p class="body-lg" style="max-width: 64ch">We only take DTC consumer brands between $2M and $50M. That's a limitation. It's why we already know your vertical's benchmarks, your creative patterns, your attribution quirks — and can tell you the answer in week one, not month four.</p>
+        </div>
+      </div>
+      <div style="display:grid; grid-template-columns: 1fr 3fr; gap: 40px; padding: 36px 0; border-bottom: 1px solid var(--rule)">
+        <div class="mono" style="color:var(--mid); font-size:12px; letter-spacing:0.12em; text-transform:uppercase">Principle 02</div>
+        <div>
+          <h3 class="h2" style="margin-bottom: 14px; font-size: 36px">Outcomes, not activity.</h3>
+          <p class="body-lg" style="max-width: 64ch">We report MER, CAC, and contribution margin. Your CFO understands those three numbers. "Impressions" is not a unit of success — it's a unit of spend.</p>
+        </div>
+      </div>
+      <div style="display:grid; grid-template-columns: 1fr 3fr; gap: 40px; padding: 36px 0; border-bottom: 1px solid var(--rule)">
+        <div class="mono" style="color:var(--mid); font-size:12px; letter-spacing:0.12em; text-transform:uppercase">Principle 03</div>
+        <div>
+          <h3 class="h2" style="margin-bottom: 14px; font-size: 36px">Radical transparency.</h3>
+          <p class="body-lg" style="max-width: 64ch">You see the same dashboard we do. Every ad we run, every dollar we spend, every change we make — logged and visible in real time. If something went sideways yesterday, you already know about it.</p>
+        </div>
+      </div>
+      <div style="display:grid; grid-template-columns: 1fr 3fr; gap: 40px; padding: 36px 0; border-bottom: 1px solid var(--rule)">
+        <div class="mono" style="color:var(--mid); font-size:12px; letter-spacing:0.12em; text-transform:uppercase">Principle 04</div>
+        <div>
+          <h3 class="h2" style="margin-bottom: 14px; font-size: 36px">Over-serve, never chase.</h3>
+          <p class="body-lg" style="max-width: 64ch">If you ever feel like you need to check in to know what's happening, we have failed. Mondays at 8am, you wake up to a narrative in your inbox. Nothing to chase.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Team -->
+<section class="section">
+  <div class="shell">
+    <div class="section-head">
+      <div class="left">
+        <span class="num">§ 02 — The people</span>
+        <h2 class="h1" style="max-width: 16ch">Named, not anonymous.</h2>
+      </div>
+      <div style="max-width: 40ch"><p class="body-lg">Every engagement has a named strategist, senior buyer, and creative lead in the MSA. You call them directly.</p></div>
+    </div>
+
+    <div class="grid cols-4" id="team-grid"></div>
+    <script>
+      const team = [
+        {n:'Ines Albuquerque', r:'Founder · Strategy'},
+        {n:'Theo Hollander', r:'Head of Buying'},
+        {n:'Mara Yusuf', r:'Creative Director'},
+        {n:'Jules Baptiste', r:'Signal Engineering'},
+      ];
+      document.getElementById('team-grid').innerHTML = team.map(p => `
+        <div>
+          <div class="placeholder" style="aspect-ratio: 3/4"><span>portrait</span></div>
+          <div style="margin-top: 16px">
+            <div style="font-family: var(--serif); font-size: 22px; line-height: 1.2">${p.n}</div>
+            <div class="mono small" style="margin-top: 4px">${p.r}</div>
+          </div>
+        </div>
+      `).join('');
+    </script>
+  </div>
+</section>
+
+<!-- Numbers about the firm -->
+<section class="section">
+  <div class="shell">
+    <div class="section-head">
+      <div class="left">
+        <span class="num">§ 03 — The firm in numbers</span>
+      </div>
+    </div>
+    <div class="grid cols-4">
+      <div class="stat"><div class="stat-num">14</div><div class="stat-label">People on the team</div></div>
+      <div class="stat"><div class="stat-num">47</div><div class="stat-label">Active client engagements</div></div>
+      <div class="stat"><div class="stat-num">$38<span class="unit">M</span></div><div class="stat-label">TTM media under management</div></div>
+      <div class="stat"><div class="stat-num">22<span class="unit">mo</span></div><div class="stat-label">Median retainer length</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="shell-narrow">
+    <h2 class="display" style="font-size: clamp(40px, 5.4vw, 80px); max-width: 20ch">Start with an audit. Decide from there.</h2>
+    <div style="display:flex; gap:14px; margin-top: 40px; flex-wrap:wrap">
+      <a class="btn btn-primary" href="audit.html">Commission the audit</a>
+      <a class="btn btn-ghost" href="contact.html">Send a note</a>
+    </div>
+  </div>
+</section>
+
+<div id="footer"></div>
+<script src="assets/shell.js"></script>
+</body>
+</html>

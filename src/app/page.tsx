@@ -46,7 +46,7 @@ export default function Home() {
                   initial="initial"
                   animate="whileInView"
                 >
-                  {["Your CAC is", "not a mystery.", "Its a math problem."].map((line, i) => (
+                  {["Your CAC is", "not a mystery.", "It's a math problem."].map((line, i) => (
                     <div key={i} className="overflow-hidden">
                       <motion.span
                         custom={i}
@@ -58,7 +58,7 @@ export default function Home() {
                         className="block"
                       >
                         {line.includes("problem") ? (
-                           <>Its a <em>math problem.</em></>
+                           <><em>It's a math problem.</em></>
                         ) : line}
                       </motion.span>
                     </div>

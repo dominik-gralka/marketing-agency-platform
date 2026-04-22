@@ -5,7 +5,7 @@ import Link from "next/link";
 import { motion } from "motion/react";
 import React from "react";
 
-const transition = { duration: 0.8, ease: [0.16, 1, 0.3, 1] };
+const transition = { duration: 0.8, ease: [0.16, 1, 0.3, 1] as const };
 const fadeInUp = {
   initial: { opacity: 0, y: 20 },
   whileInView: { opacity: 1, y: 0 },
@@ -20,6 +20,8 @@ export default function AboutPage() {
     { n: 'Jules Baptiste', r: 'Signal Engineering' },
   ];
 
+  const heroLines = ["A small shop,", "built to outlast", "the client."];
+
   return (
     <>
       <Section flushTop className="pt-24 pb-10">
@@ -28,21 +30,25 @@ export default function AboutPage() {
             <span className="mono text-mid">§ About · the house</span>
           </motion.div>
           
-          <div className="overflow-hidden mt-6">
-            <motion.h1 
-              initial={{ y: "100%" }}
-              animate={{ y: 0 }}
-              transition={{ ...transition, delay: 0.1 }}
-              className="display max-w-[18ch]"
-            >
-              A small shop,<br />built to outlast<br />the client.
-            </motion.h1>
-          </div>
+          <h1 className="display mt-6 max-w-[18ch]">
+            {heroLines.map((line, i) => (
+              <div key={i} className="overflow-hidden">
+                <motion.span
+                  initial={{ y: "100%" }}
+                  animate={{ y: 0 }}
+                  transition={{ ...transition, delay: 0.1 + i * 0.1 }}
+                  className="block"
+                >
+                  {line}
+                </motion.span>
+              </div>
+            ))}
+          </h1>
 
           <motion.p 
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ ...transition, delay: 0.4 }}
+            transition={{ ...transition, delay: 0.5 }}
             className="lede max-w-[54ch] mt-8"
           >
             Northbound is 14 people in Brooklyn and Lisbon. We run paid media for one
@@ -94,7 +100,7 @@ export default function AboutPage() {
                 <div className="mono text-mid text-[12px] tracking-[0.12em] uppercase">Principle {p.num}</div>
                 <div>
                   <h3 className="font-serif text-[36px] leading-[1.05] mb-[14px]">{p.title}</h3>
-                  <p className="body-lg max-w-[64ch]">{p.desc}</p>
+                  <p className="body-lg max-w-[64ch] text-ink-2">{p.desc}</p>
                 </div>
               </motion.div>
             ))}

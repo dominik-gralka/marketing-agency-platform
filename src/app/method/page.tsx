@@ -5,7 +5,7 @@ import Link from "next/link";
 import { motion } from "motion/react";
 import React from "react";
 
-const transition = { duration: 0.8, ease: [0.16, 1, 0.3, 1] };
+const transition = { duration: 0.8, ease: [0.16, 1, 0.3, 1] as const };
 const fadeInUp = {
   initial: { opacity: 0, y: 20 },
   whileInView: { opacity: 1, y: 0 },
@@ -13,6 +13,8 @@ const fadeInUp = {
 };
 
 export default function MethodPage() {
+  const heroLines = ["Four loops.", "Running", "at once."];
+
   return (
     <>
       <Section flushTop className="pt-24 pb-10">
@@ -21,21 +23,25 @@ export default function MethodPage() {
             <span className="mono text-mid">§ Method · the operating system</span>
           </motion.div>
 
-          <div className="overflow-hidden mt-6">
-            <motion.h1 
-              initial={{ y: "100%" }}
-              animate={{ y: 0 }}
-              transition={{ ...transition, delay: 0.1 }}
-              className="display max-w-[18ch]"
-            >
-              Four loops.<br />Running<br />at once.
-            </motion.h1>
-          </div>
+          <h1 className="display mt-6 max-w-[18ch]">
+            {heroLines.map((line, i) => (
+              <div key={i} className="overflow-hidden">
+                <motion.span
+                  initial={{ y: "100%" }}
+                  animate={{ y: 0 }}
+                  transition={{ ...transition, delay: 0.1 + i * 0.1 }}
+                  className="block"
+                >
+                  {line}
+                </motion.span>
+              </div>
+            ))}
+          </h1>
 
           <motion.p 
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ ...transition, delay: 0.4 }}
+            transition={{ ...transition, delay: 0.5 }}
             className="lede max-w-[52ch] mt-8"
           >
             We don&apos;t run &quot;campaigns.&quot; We run a closed-loop system that moves through four stages every week.
@@ -231,7 +237,7 @@ export default function MethodPage() {
                   <p className="body-lg mb-5">{item.desc}</p>
                   <ul className="list-none p-0 m-0 flex flex-col gap-[10px] text-[14px]">
                     {item.items.map((li, k) => (
-                      <li key={k} className="flex gap-3"><span className="mono text-mid">→</span>{li}</li>
+                      <li key={k} className="flex gap-3 text-ink-2"><span className="mono text-mid">→</span>{li}</li>
                     ))}
                   </ul>
                 </div>

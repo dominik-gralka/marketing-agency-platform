@@ -7,7 +7,7 @@ import React from "react";
 import AuditTool from "@/components/AuditTool";
 
 // Elegant shared transition
-const transition = { duration: 0.8, ease: [0.16, 1, 0.3, 1] };
+const transition = { duration: 0.8, ease: [0.16, 1, 0.3, 1] as const };
 
 const fadeInUp = {
   initial: { opacity: 0, y: 20 },

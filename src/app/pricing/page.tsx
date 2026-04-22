@@ -5,7 +5,7 @@ import Link from "next/link";
 import { motion } from "motion/react";
 import React, { useState } from "react";
 
-const transition = { duration: 0.8, ease: [0.16, 1, 0.3, 1] };
+const transition = { duration: 0.8, ease: [0.16, 1, 0.3, 1] as const };
 const fadeInUp = {
   initial: { opacity: 0, y: 20 },
   whileInView: { opacity: 1, y: 0 },
@@ -56,7 +56,7 @@ export default function PricingPage() {
         "All four platforms",
         "Unlimited concept volume",
         "Embedded 4-person pod",
-        "Daily 15-min standup w/ your team",
+        "Daily 15-min x with your team",
         "Signal engineer on retainer",
         "Quarterly in-person strategy day"
       ],
@@ -88,6 +88,8 @@ export default function PricingPage() {
     ['Who actually works on my account?', 'A named strategist, senior buyer, and creative lead — listed in the MSA. Never an anonymous pod.'],
   ];
 
+  const heroLines = ["Three tiers.", "Fixed scopes.", "No surprises."];
+
   return (
     <>
       <Section flushTop className="pt-24 pb-10">
@@ -96,16 +98,20 @@ export default function PricingPage() {
             <span className="mono text-mid">§ Pricing · productized stack</span>
           </motion.div>
 
-          <div className="overflow-hidden mt-6">
-            <motion.h1 
-              initial={{ y: "100%" }}
-              animate={{ y: 0 }}
-              transition={{ ...transition, delay: 0.1 }}
-              className="display max-w-[18ch]"
-            >
-              Three tiers.<br />Fixed scopes.<br /><em>No surprises.</em>
-            </motion.h1>
-          </div>
+          <h1 className="display mt-6 max-w-[18ch]">
+            {heroLines.map((line, i) => (
+              <div key={i} className="overflow-hidden">
+                <motion.span
+                  initial={{ y: "100%" }}
+                  animate={{ y: 0 }}
+                  transition={{ ...transition, delay: 0.1 + i * 0.1 }}
+                  className="block"
+                >
+                  {line === "No surprises." ? <em>No surprises.</em> : line}
+                </motion.span>
+              </div>
+            ))}
+          </h1>
 
           <motion.p 
             initial={{ opacity: 0, y: 15 }}

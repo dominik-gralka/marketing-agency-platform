@@ -2,7 +2,15 @@
 
 import { Shell, Section, Kicker } from "@/components/UI";
 import Link from "next/link";
+import { motion } from "motion/react";
 import React, { useState } from "react";
+
+const transition = { duration: 0.8, ease: [0.16, 1, 0.3, 1] };
+const fadeInUp = {
+  initial: { opacity: 0, y: 20 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport: { once: true, margin: "-100px" }
+};
 
 export default function PricingPage() {
   const tiers = [
@@ -82,15 +90,32 @@ export default function PricingPage() {
 
   return (
     <>
-      <Section flushTop className="pt-20 pb-10">
+      <Section flushTop className="pt-24 pb-10">
         <Shell>
-          <span className="mono text-mid">§ Pricing · productized stack</span>
-          <h1 className="display mt-6 max-w-[18ch]">Three tiers.<br />Fixed scopes.<br /><em>No surprises.</em></h1>
-          <p className="lede max-w-[54ch] mt-8">
+          <motion.div initial={{ opacity: 0, x: -10 }} animate={{ opacity: 1, x: 0 }} transition={transition}>
+            <span className="mono text-mid">§ Pricing · productized stack</span>
+          </motion.div>
+
+          <div className="overflow-hidden mt-6">
+            <motion.h1 
+              initial={{ y: "100%" }}
+              animate={{ y: 0 }}
+              transition={{ ...transition, delay: 0.1 }}
+              className="display max-w-[18ch]"
+            >
+              Three tiers.<br />Fixed scopes.<br /><em>No surprises.</em>
+            </motion.h1>
+          </div>
+
+          <motion.p 
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ ...transition, delay: 0.4 }}
+            className="lede max-w-[54ch] mt-8"
+          >
             We price on scope, not on hours. Every deliverable is in the MSA.
             Anything outside it is a formal change order — never an invoice surprise.
-          </p>
-          <div className="mono small mt-5 text-mid max-w-[60ch]">Exact numbers are shared on a 20-min scoping call — we&apos;d rather size the retainer to your spend than sell you a plan.</div>
+          </motion.p>
         </Shell>
       </Section>
 
@@ -98,8 +123,12 @@ export default function PricingPage() {
         <Shell>
           <div className="grid grid-cols-3 gap-0 border-t border-rule border-l border-rule max-md:grid-cols-1 max-md:border-l-0">
             {tiers.map((tier, i) => (
-              <div 
+              <motion.div 
                 key={i} 
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ ...transition, delay: i * 0.1 }}
                 className={`p-10 border-r border-rule border-b border-rule flex flex-col relative ${tier.dark ? 'bg-ink text-bg' : 'bg-paper text-ink'}`}
               >
                 {tier.tag && (
@@ -122,9 +151,9 @@ export default function PricingPage() {
                   <Kicker><span className={tier.dark ? 'text-bg/60' : ''}>In-scope</span></Kicker>
                   <ul className="list-none p-0 m-0 flex flex-col gap-[10px] text-[14px] mt-3">
                     {tier.scope.map((item, j) => (
-                      <li key={j} className="flex gap-2.5">
+                      <li key={j} className="flex gap-2.5 text-ink-2">
                         <span className={`mono ${tier.dark ? 'text-bg/50' : 'text-mid'}`}>·</span>
-                        {item}
+                        <span className={tier.dark ? 'text-bg/90' : ''}>{item}</span>
                       </li>
                     ))}
                   </ul>
@@ -142,7 +171,7 @@ export default function PricingPage() {
                 >
                   Book a scoping call
                 </Link>
-              </div>
+              </motion.div>
             ))}
           </div>
         </Shell>
@@ -150,14 +179,18 @@ export default function PricingPage() {
 
       <Section>
         <Shell>
-          <div className="flex items-baseline justify-between gap-10 mb-14">
-            <div className="flex flex-col gap-4">
-              <span className="font-mono text-[12px] tracking-[0.15em] text-mid">§ 02 — At a glance</span>
-              <h2 className="h1 max-w-[16ch]">What&apos;s in each tier.</h2>
-            </div>
-          </div>
+          <motion.div {...fadeInUp} transition={transition} className="mb-14">
+            <span className="font-mono text-[12px] tracking-[0.15em] text-mid">§ 02 — At a glance</span>
+            <h2 className="h1 mt-4 max-w-[16ch]">What&apos;s in each tier.</h2>
+          </motion.div>
 
-          <div className="border-t border-rule overflow-x-auto">
+          <motion.div 
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1 }}
+            className="border-t border-rule overflow-x-auto"
+          >
             <table className="w-full border-collapse text-[14px]">
               <thead>
                 <tr className="font-mono text-[11px] tracking-[0.12em] uppercase text-mid text-left">
@@ -178,42 +211,50 @@ export default function PricingPage() {
                 ))}
               </tbody>
             </table>
-          </div>
+          </motion.div>
         </Shell>
       </Section>
 
       <Section>
         <Shell>
-          <div className="flex items-baseline justify-between gap-10 mb-14">
-            <div className="flex flex-col gap-4">
-              <span className="font-mono text-[12px] tracking-[0.15em] text-mid">§ 03 — Guarantees</span>
-              <h2 className="h1 max-w-[18ch]">Written into every MSA.</h2>
-            </div>
-          </div>
+          <motion.div {...fadeInUp} transition={transition} className="mb-14">
+            <span className="font-mono text-[12px] tracking-[0.15em] text-mid">§ 03 — Guarantees</span>
+            <h2 className="h1 mt-4 max-w-[18ch]">Written into every MSA.</h2>
+          </motion.div>
 
           <div className="grid grid-cols-2 gap-10 max-md:grid-cols-1">
-            <div className="card p-10">
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ ...transition, delay: 0.1 }}
+              className="card p-10"
+            >
               <Kicker>G-01 · Launch</Kicker>
-              <h3 className="h2 mt-4">First ads live in 14 days — or setup is refunded.</h3>
-              <p className="body mt-4">From signed MSA to first live ad impression, ten business days. Miss, and your setup fee is returned the same hour.</p>
-            </div>
-            <div className="card p-10">
+              <h3 className="h2 mt-4 text-[28px]">First ads live in 14 days — or setup is refunded.</h3>
+              <p className="body mt-4 text-ink-2">From signed MSA to first live ad impression, ten business days. Miss, and your setup fee is returned the same hour.</p>
+            </motion.div>
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ ...transition, delay: 0.2 }}
+              className="card p-10"
+            >
               <Kicker>G-02 · CAC</Kicker>
-              <h3 className="h2 mt-4">Hit your agreed CAC in 60 days — or month three is free.</h3>
-              <p className="body mt-4">We write a target CAC into the contract before first spend. Miss in 60 days and month three is waived.</p>
-            </div>
+              <h3 className="h2 mt-4 text-[28px]">Hit your agreed CAC in 60 days — or month three is free.</h3>
+              <p className="body mt-4 text-ink-2">We write a target CAC into the contract before first spend. Miss in 60 days and month three is waived.</p>
+            </motion.div>
           </div>
         </Shell>
       </Section>
 
       <Section>
         <Shell>
-          <div className="flex items-baseline justify-between gap-10 mb-14">
-            <div className="flex flex-col gap-4">
-              <span className="font-mono text-[12px] tracking-[0.15em] text-mid">§ 04 — FAQ</span>
-              <h2 className="h1">Things you might ask.</h2>
-            </div>
-          </div>
+          <motion.div {...fadeInUp} transition={transition} className="mb-14">
+            <span className="font-mono text-[12px] tracking-[0.15em] text-mid">§ 04 — FAQ</span>
+            <h2 className="h1 mt-4">Things you might ask.</h2>
+          </motion.div>
           <div className="border-t border-rule">
             {faqs.map((faq, i) => (
                <FAQItem key={i} index={i+1} question={faq[0]} answer={faq[1]} />
@@ -229,23 +270,31 @@ function FAQItem({ index, question, answer }: { index: number, question: string,
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="border-b border-rule">
+    <motion.div 
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.8 }}
+      className="border-b border-rule"
+    >
       <button 
         onClick={() => setIsOpen(!isOpen)}
-        className="w-full py-6 flex justify-between items-center text-left font-inherit text-[18px] text-ink bg-transparent border-none cursor-pointer"
+        className="w-full py-7 flex justify-between items-center text-left font-inherit text-[18px] text-ink bg-transparent border-none cursor-pointer group"
       >
         <span className="flex gap-5 items-baseline">
           <span className="mono text-mid text-[12px]">{String(index).padStart(2, '0')}</span>
-          <span>{question}</span>
+          <span className="group-hover:translate-x-1 transition-transform duration-300">{question}</span>
         </span>
         <span className="mono text-mid text-[20px] leading-none">{isOpen ? '−' : '+'}</span>
       </button>
-      <div 
-        className={`overflow-hidden transition-[max-height] duration-300 ease-in-out`}
-        style={{ maxHeight: isOpen ? '200px' : '0' }}
+      <motion.div 
+        initial={false}
+        animate={{ height: isOpen ? 'auto' : 0, opacity: isOpen ? 1 : 0 }}
+        transition={transition}
+        className="overflow-hidden"
       >
-        <div className="pb-6 pl-12 max-w-[64ch] body">{answer}</div>
-      </div>
-    </div>
+        <div className="pb-8 pl-12 max-w-[64ch] body text-ink-2 leading-relaxed">{answer}</div>
+      </motion.div>
+    </motion.div>
   );
 }

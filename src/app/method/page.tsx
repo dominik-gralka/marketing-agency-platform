@@ -1,35 +1,66 @@
+"use client";
+
 import { Shell, Section, Kicker } from "@/components/UI";
 import Link from "next/link";
+import { motion } from "motion/react";
+import React from "react";
 
-export const metadata = {
-  title: "Method — Northbound",
+const transition = { duration: 0.8, ease: [0.16, 1, 0.3, 1] };
+const fadeInUp = {
+  initial: { opacity: 0, y: 20 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport: { once: true, margin: "-100px" }
 };
 
 export default function MethodPage() {
   return (
     <>
-      <Section flushTop className="pt-20 pb-10">
+      <Section flushTop className="pt-24 pb-10">
         <Shell>
-          <span className="mono text-mid">§ Method · the operating system</span>
-          <h1 className="display mt-6 max-w-[18ch]">Four loops.<br />Running<br />at once.</h1>
-          <p className="lede max-w-[52ch] mt-8">
+          <motion.div initial={{ opacity: 0, x: -10 }} animate={{ opacity: 1, x: 0 }} transition={transition}>
+            <span className="mono text-mid">§ Method · the operating system</span>
+          </motion.div>
+
+          <div className="overflow-hidden mt-6">
+            <motion.h1 
+              initial={{ y: "100%" }}
+              animate={{ y: 0 }}
+              transition={{ ...transition, delay: 0.1 }}
+              className="display max-w-[18ch]"
+            >
+              Four loops.<br />Running<br />at once.
+            </motion.h1>
+          </div>
+
+          <motion.p 
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ ...transition, delay: 0.4 }}
+            className="lede max-w-[52ch] mt-8"
+          >
             We don&apos;t run &quot;campaigns.&quot; We run a closed-loop system that moves through four stages every week.
             Below is what each loop actually does, who owns it, and the artifacts it produces.
-          </p>
+          </motion.p>
         </Shell>
       </Section>
 
       <Section>
         <Shell>
-          <div className="flex items-baseline justify-between gap-10 mb-14 max-md:flex-col">
+          <motion.div {...fadeInUp} transition={transition} className="flex items-baseline justify-between gap-10 mb-14 max-md:flex-col">
             <div className="flex flex-col gap-4">
               <span className="font-mono text-[12px] tracking-[0.15em] text-mid">§ 01 — System map</span>
               <h2 className="h1 max-w-[18ch]">From signal to scale, in one diagram.</h2>
             </div>
             <div className="max-w-[40ch]"><p className="body-lg">Each loop feeds the next. Break any one of them and the rest quietly stop working — which is where most agencies drift.</p></div>
-          </div>
+          </motion.div>
 
-          <div className="bg-paper border border-rule p-14 max-md:p-6 overflow-x-auto">
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.98 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ ...transition, delay: 0.2 }}
+            className="bg-paper border border-rule p-14 max-md:p-6 overflow-x-auto shadow-sm"
+          >
              <div className="min-w-[1000px]">
                 <svg viewBox="0 0 1200 480" className="w-full h-auto block" xmlns="http://www.w3.org/2000/svg">
                   <defs>
@@ -113,19 +144,17 @@ export default function MethodPage() {
                   <text x="540" y="468" className="font-mono text-[10px] fill-mid" letterSpacing="1.2">FEEDBACK · RESULTS INFORM NEXT CYCLE</text>
                 </svg>
              </div>
-          </div>
-          <div className="mono small mt-4 text-mid">Fig. 01 — Northbound operating system. Every retainer runs this diagram, every week.</div>
+          </motion.div>
+          <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ delay: 0.4 }} className="mono small mt-4 text-mid">Fig. 01 — Northbound operating system. Every retainer runs this diagram, every week.</motion.div>
         </Shell>
       </Section>
 
       <Section>
         <Shell>
-          <div className="flex items-baseline justify-between gap-10 mb-14">
-            <div className="flex flex-col gap-4">
-              <span className="font-mono text-[12px] tracking-[0.15em] text-mid">§ 02 — Loops in detail</span>
-              <h2 className="h1 max-w-[18ch]">Who owns what,<br />and when.</h2>
-            </div>
-          </div>
+          <motion.div {...fadeInUp} transition={transition} className="mb-14">
+            <span className="font-mono text-[12px] tracking-[0.15em] text-mid">§ 02 — Loops in detail</span>
+            <h2 className="h1 mt-4 max-w-[18ch]">Who owns what,<br />and when.</h2>
+          </motion.div>
 
           <div className="flex flex-col border-t border-rule">
             {[
@@ -186,7 +215,14 @@ export default function MethodPage() {
                 artifact: "Every dashboard you need"
               }
             ].map((item, i) => (
-              <div key={i} className="grid grid-cols-[1fr_2fr_1fr] gap-10 py-10 border-b border-rule items-start max-md:grid-cols-1">
+              <motion.div 
+                key={i} 
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ ...transition, delay: i * 0.1 }}
+                className="grid grid-cols-[1fr_2fr_1fr] gap-10 py-10 border-b border-rule items-start max-md:grid-cols-1"
+              >
                 <div>
                   <div className="mono text-mid text-[11px] tracking-[0.12em] uppercase">Loop {item.loop}</div>
                   <h3 className="h2 mt-[14px] leading-tight">{item.title.split(' ').map((w, j) => <React.Fragment key={j}>{w}{j === 0 ? <br/> : ' '}</React.Fragment>)}</h3>
@@ -207,7 +243,7 @@ export default function MethodPage() {
                   <Kicker>Artifact</Kicker>
                   <div className="text-[14px]">{item.artifact}</div>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
         </Shell>
@@ -215,15 +251,15 @@ export default function MethodPage() {
 
       <Section>
         <Shell narrow>
-          <h2 className="display text-[clamp(40px,5.4vw,80px)] max-w-[18ch]">Seen enough? The audit shows how we&apos;d run this for you.</h2>
-          <div className="flex gap-[14px] mt-10 flex-wrap">
-            <Link className="btn btn-primary" href="/audit">See the paid audit</Link>
-            <Link className="btn btn-ghost" href="/pricing">See pricing</Link>
-          </div>
+          <motion.div {...fadeInUp} transition={transition}>
+            <h2 className="display text-[clamp(40px,5.4vw,80px)] max-w-[18ch]">Seen enough? The audit shows how we&apos;d run this for you.</h2>
+            <div className="flex gap-[14px] mt-10 flex-wrap">
+              <Link className="btn btn-primary" href="/audit">See the paid audit</Link>
+              <Link className="btn btn-ghost" href="/pricing">See pricing</Link>
+            </div>
+          </motion.div>
         </Shell>
       </Section>
     </>
   );
 }
-
-import React from "react";

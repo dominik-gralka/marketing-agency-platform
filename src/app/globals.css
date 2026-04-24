@@ -1,0 +1,83 @@
+@import "tailwindcss";
+@config "../../tailwind.config.mjs";
+
+:root {
+  --bg: #f5f2ec;
+  --paper: #fcfaf6;
+  --ink: #171412;
+  --ink-2: #2b2620;
+  --mid: #8a8175;
+  --faint: #b6ac9c;
+  --rule: #e4ddd0;
+  --rule-2: #d7cdba;
+  --accent: #171412;
+  --hot: oklch(0.68 0.14 55);
+  --good: oklch(0.58 0.10 145);
+  --bad: oklch(0.55 0.16 25);
+}
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+}
+
+@layer components {
+  .display {
+    @apply font-serif text-[clamp(48px,5.4vw,112px)] leading-[0.98] tracking-[-0.02em];
+  }
+  .h1 {
+    @apply font-serif text-[clamp(40px,5.4vw,80px)] leading-[1.0] tracking-[-0.02em];
+  }
+  .h2 {
+    @apply font-serif text-[clamp(32px,3.6vw,52px)] leading-[1.05] tracking-[-0.015em];
+  }
+  .lede {
+    @apply font-serif text-[clamp(20px,1.8vw,26px)] leading-[1.4] text-ink-2 tracking-[-0.005em];
+  }
+  .kicker {
+    @apply font-mono text-[11px] tracking-[0.14em] uppercase text-mid font-medium;
+  }
+  .mono {
+    @apply font-mono text-[12px] tracking-[0.02em];
+  }
+  
+  /* Utilities that were in styles.css but didn't fit easily in the above */
+  .chip-choice {
+    @apply px-3 py-1.5 border border-rule-2 font-mono text-[11px] tracking-[0.05em] uppercase text-mid bg-transparent cursor-pointer transition-colors;
+  }
+  .chip-choice.on {
+    @apply border-ink text-ink bg-ink/5;
+  }
+  .btn {
+    @apply inline-flex items-center gap-2 px-6 py-3 font-mono text-[13px] tracking-[0.05em] uppercase transition-all rounded-[2px];
+  }
+  .btn-primary {
+    @apply bg-ink text-bg hover:bg-ink-2;
+  }
+  .btn-ghost {
+    @apply border border-rule text-ink hover:border-ink;
+  }
+  .card {
+    @apply bg-paper border border-rule;
+  }
+  .tag {
+    @apply inline-flex items-center gap-2 px-2.5 py-1.5 font-mono text-[11px] tracking-[0.1em] uppercase text-ink-2 bg-paper border border-rule rounded-[2px];
+  }
+  .tag.dot::before {
+    @apply content-[''] w-1.5 h-1.5 rounded-full bg-good;
+  }
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  animation: marquee 40s linear infinite;
+}
+
+.body-lg {
+  @apply text-[18px] leading-[1.55] text-ink-2;
+}
